@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <img class="logo" src="../assets/images/spotify-logo.png" alt="">
+          <img class="logo" :src="img" alt="">
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
     <div id="root">
-      <Header />
+      <Header :img="require('./assets/images/spotify-logo.png')" />
       <Albums />
     </div>
 </template>
@@ -14,7 +14,7 @@ export default {
   components: {
     Header,
     Albums
-  }
+  },
 }
 </script>
 
