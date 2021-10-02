@@ -21,6 +21,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+
+header {
+  padding: 10px 0px;
+  background-color: var(--bg-header);
+}
+
   .logo {
     width: 50px;
   }
