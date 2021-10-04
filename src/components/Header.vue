@@ -6,7 +6,7 @@
           <img class="logo" :src="img" alt="">
         </div>
         <div class="col-6 text-end">
-          <select name="genre" id="genre">
+          <select v-model="genre" @change="$emit('filterGenre', genre)" name="genre" id="genre">
             <option value="rock">Rock</option>
             <option value="pop">Pop</option>
             <option value="jazz">Jazz</option>
@@ -23,6 +23,11 @@ export default {
   name: 'Header',
   props: {
     img: String
+  },
+  data() {
+    return {
+      genre: ""
+    }
   }
 }
 </script>
