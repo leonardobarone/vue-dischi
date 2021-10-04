@@ -6,11 +6,9 @@
           <img class="logo" :src="img" alt="">
         </div>
         <div class="col-6 text-end">
-          <select v-model="genre" @change="$emit('filterGenre', genre)" name="genre" id="genre">
-            <option value="rock">Rock</option>
-            <option value="pop">Pop</option>
-            <option value="jazz">Jazz</option>
-            <option value="metal">Metal</option>
+          <select v-model="genere" @change="$emit('filterGenre', genere)" name="genre" id="genre">
+            <option value="all">All</option>
+            <option v-for="(genre,index) in genres" :value="genre" :key="index">{{genre}}</option>
           </select>
         </div>
       </div>
@@ -22,11 +20,12 @@
 export default {
   name: 'Header',
   props: {
-    img: String
+    img: String,
+    genres: Array
   },
   data() {
     return {
-      genre: ""
+      genere: ""
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
     <div id="root">
-      <Header @filterGenre="filtraggio" :img="require('./assets/images/spotify-logo.png')" />
-      <Albums :genre="option"/>
+      <Header :genres="genres" @filterGenre="filtraggio" :img="require('./assets/images/spotify-logo.png')" />
+      <Albums @arrayGenres="stampaArray" :genre="option"/>
     </div>
 </template>
 
@@ -17,13 +17,17 @@ export default {
   },
   data() {
     return {
-      option: ""
+      option: "",
+      genres: []
     }
   },
 
   methods: {
     filtraggio(option) {
       this.option = option
+    },
+    stampaArray(genre) {
+      this.genres = genre
     }
   }
 }
