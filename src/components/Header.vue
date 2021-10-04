@@ -1,9 +1,17 @@
 <template>
   <header>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
+      <div class="row align-items-center">
+        <div class="col-6">
           <img class="logo" :src="img" alt="">
+        </div>
+        <div class="col-6 text-end">
+          <select name="genre" id="genre">
+            <option value="rock">Rock</option>
+            <option value="pop">Pop</option>
+            <option value="jazz">Jazz</option>
+            <option value="metal">Metal</option>
+          </select>
         </div>
       </div>
     </div>
