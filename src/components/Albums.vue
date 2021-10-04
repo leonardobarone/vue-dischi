@@ -1,7 +1,7 @@
 <template>
   <div class="albums container">
     <div class="row row-cols-2 row-cols-md-5">
-       <div class="col" v-for="(album, index) in albums" :key="index">
+       <div class="col" v-for="(album, index) in albumsFiltered" :key="index">
           <Album :album="album" />
        </div>
     </div>
@@ -19,6 +19,7 @@ export default {
       albums:[]
       }
   },
+  props: ['genre'],
   components: {
     Album
   },
@@ -27,7 +28,16 @@ export default {
     .then((response)=> {
         this.albums = response.data.response;
     });
-  } 
+  },
+  computed: {
+    albumsFiltered() {
+      return this.albums.filter(
+        (elm) => {
+          return elm.genre.toLowerCase().includes(this.genre)
+      })
+    }
+  }
+  
 }
 </script>
 

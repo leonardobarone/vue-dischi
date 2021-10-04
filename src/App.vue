@@ -1,7 +1,7 @@
 <template>
     <div id="root">
-      <Header @filterGenre="filtraggio()" :img="require('./assets/images/spotify-logo.png')" />
-      <Albums />
+      <Header @filterGenre="filtraggio" :img="require('./assets/images/spotify-logo.png')" />
+      <Albums :genre="option"/>
     </div>
 </template>
 
@@ -19,7 +19,8 @@ export default {
     return {
       option: ""
     }
-  }, 
+  },
+
   methods: {
     filtraggio(option) {
       this.option = option
